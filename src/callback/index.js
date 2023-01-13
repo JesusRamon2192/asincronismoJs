@@ -39,3 +39,15 @@ function div(num1, num2) {
 function calc(num1, num2, callback) {
     return callback(num1, num2);
 };
+
+//Tienes la función execCallback que recibirá un callback es decir una función como parámetro, tu reto es ejecutar esa función con un tiempo de demora de 2 segundos.
+//Para hacer que la función se demore 2 segundos debes usar la función setTimeout, pero para ejecutarla debes llamarla mediante el namescpace window para poder monitorear su uso en la ejecución de pruebas, ejemplo:
+const myFunc = () => {
+    console.log(`Hola mundo`)
+  }
+  
+  export function execCallback(callback) {
+    window.setTimeout(callback, 2000)
+  }
+  
+  execCallback(myFunc)
