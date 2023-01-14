@@ -34,3 +34,24 @@ countCows.then((result) => {
     console.log('Finally');
     // .finally es un método donde indicamos que finalizó, por más que se haya cumplido o rechazado.
 });
+
+//Challenge
+/* En este desafío tienes la función delay la cual se espera que un tiempo específico retorne un mensaje
+
+La función deberá recibir dos parámetros:
+
+time: el tiempo de espera
+message: el mensaje que debe imprimir después del tiempo de espera
+La función delay debe retornar una promesa para poderlo usarlo de forma asíncrona.
+
+Nota: Debes usar la función setTimeout con el namespace window para poder monitorear su uso en la ejecución de pruebas, ejemplo: */
+
+export function delay(time, message) {
+    return new Promise((resolve) => {
+      window.setTimeout(() => {
+        resolve(message)
+      }, time)
+    })
+  }
+  delay(2000, "Hello after 2s")
+    .then((message) => console.log(message))
